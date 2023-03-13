@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+    <title>Player Database</title>
+</head>
+
+<html>
+   <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+  </head>
+  
+  <body>
+      {% load crispy_forms_tags %}
+
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand mx-auto" href="">
+          Player Database
+        </a>
+      </nav>
+      <br><center><img src="https://thumbs.gfycat.com/BaggyAdorableFairybluebird-size_restricted.gif" alt="Cool Basketball Animation" style="width:180px;height:180px;">
+        <img src="https://www.freepnglogos.com/uploads/nba-logo-png/nba-stats-logo-documentation-with-examples-slothparadise-11.png" alt="NBA logo" style="width:500px;height:150px;">
+        <img src="https://thumbs.gfycat.com/BaggyAdorableFairybluebird-size_restricted.gif" alt="Cool Basketball Animation" style="width:180px;height:180px;"></center><br>
+
+      <div class="container">
+      <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button class ="btn btn-primary" type="submit" id= "submit_button">Submit</button>
+        <br><br><br><a href="http://127.0.0.1:8000/polls/" class="btn btn-primary">Go to Polls Page</a>
+      </form>
+      </div>
+      <br><br>
+      <div class="container">
+        {% for player in players %}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ player.name }}</h5>
+            <p class="card-text">{{ player.team }}</p>
+            <p class="card-text">{{ player.height }}</p>
+            <p class="card-text">{{ player.ppg }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+  </body>
+</html>

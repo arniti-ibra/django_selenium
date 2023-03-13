@@ -1,0 +1,22 @@
+<!--you can refer to this template within Django as polls/index.html. This is because it knows templates will be in a folder called templates!-->
+<!DOCTYPE html>
+<html lang="en"
+<head>
+    <title>NBA Polls</title>
+</head>
+<a href="http://127.0.0.1:8000/" class="btn btn-primary">Go to Player Database</a>
+
+<body>
+
+<br><br> <font size="+2">NBA Polls:</font>
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
