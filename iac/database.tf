@@ -20,7 +20,7 @@ resource "google_sql_database" "database" {
 }
 
 resource "google_sql_user" "django" {
-  name     = "djangouser"  # changed from django
+  name     = "django"
   instance = google_sql_database_instance.instance.name
   password = random_password.database_password.result
 }
