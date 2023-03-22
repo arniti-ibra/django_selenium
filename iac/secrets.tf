@@ -1,7 +1,7 @@
 # Step 6: Create the secrets
 resource "google_storage_bucket" "media" {
   name     = "${var.project}-images"
-  location = "US"
+  location = "EU"
 }
 
 resource "random_password" "django_secret_key" {
