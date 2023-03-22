@@ -146,7 +146,7 @@ class PlayerFormTest(LiveServerTestCase):
         num5 = num5 + c
 
     voter_info = driver.find_element(By.CSS_SELECTOR, 'body > ul')
-    assert voter_info.text == """Michael Jordan -- """ + num1 + """ votes\nLebron James -- """+ num2 +""" vote\nKobe Bryant -- """+ num3 + """ vote\nSteph Curry -- """+ num4 + """ vote\nMagic Johnsen -- """+ num5 + """ votes"""
+    assert voter_info.text == """Michael Jordan -- """ + num1 + """ votes\nLebron James -- """+ num2 +""" vote\nKobe Bryant -- """+ num3 + """ vote\nSteph Curry -- """+ num4 + """ votes\nMagic Johnsen -- """+ num5 + """ votes"""
     driver.find_element(By.CSS_SELECTOR, 'body > a').click()
     assert driver.current_url == 'http://127.0.0.1:8000/polls/specifics/5/'
 
@@ -284,7 +284,7 @@ class PlayerFormTest(LiveServerTestCase):
         num5 = num5 + c
 
     voter_info = driver.find_element(By.CSS_SELECTOR, 'body > ul')
-    assert voter_info.text == """Michael Jordan -- """ + num1 + """ votes\nLebron James -- """+ num2 +""" vote\nKobe Bryant -- """+ num3 + """ vote\nSteph Curry -- """+ num4 + """ vote\nMagic Johnsen -- """+ num5 + """ votes"""
+    assert voter_info.text == """Michael Jordan -- """ + num1 + """ votes\nLebron James -- """+ num2 +""" vote\nKobe Bryant -- """+ num3 + """ votes\nSteph Curry -- """+ num4 + """ votes\nMagic Johnsen -- """+ num5 + """ votes"""
     driver.find_element(By.CSS_SELECTOR, 'body > a').click()
     assert driver.current_url == 'http://127.0.0.1:8000/polls/specifics/5/'
   
