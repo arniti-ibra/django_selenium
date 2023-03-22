@@ -14,7 +14,7 @@ COPY . .
 
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
-ENV PORT 8080
+ENV PORT 8000
 
 # Setting this ensures print statements and log messages
 # promptly appear in Cloud Logging.
