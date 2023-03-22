@@ -1,17 +1,17 @@
 variable "project" {
-  default = 
+  default     = "django-auto-test-420"
   type        = string
   description = "Google Cloud Project ID"
 }
 
 variable "region" {
   type        = string
-  default     = "us-central1"
+  default     = "eu-west1"
   description = "Google Cloud Region"
 }
 
 variable "service" {
   type        = string
-  default     = "gametracker"
+  default     = "djangosite"
   description = "The name of the service"
 }
