@@ -66,3 +66,8 @@ You need to create an Admin user w/password to determine who can log into admin 
 
 You can namespace in Django if you have many apps in one project
 app_name = 'polls' in urls.py specific to the app (in this case polls)
+
+## Connecting to SQL Proxy
+
+1. SET USE_CLOUD_SQL_AUTH_PROXY=true
+   This is what lets you run it in local, the code that enables this to happen can be seen in settings.py on line
