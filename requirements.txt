@@ -3,3 +3,4 @@ django-crispy-forms==2.0
 crispy-bootstrap4==2022.1
 selenium==4.8.2
 pytest-django==4.5.2
+pytest-bdd==6.1.1
