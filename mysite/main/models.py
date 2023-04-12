@@ -8,4 +8,4 @@ class Player(models.Model):
   ppg = models.DecimalField(max_digits=5, decimal_places= 2)
 
   def __unicode__(self):
-        return self.id()
+    return self.id()
