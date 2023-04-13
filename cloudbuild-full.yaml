@@ -39,6 +39,7 @@ steps:
         "--image=${_IMAGE_NAME}",
         "--region=${_REGION}",
         "--platform=managed",
+        "--allow-unauthenticated",
       ]
 
 options:
@@ -47,5 +48,5 @@ options:
 substitutions:
   _SERVICE_NAME: "djangosite"
   _REGION: "europe-west1"
-  _INSTANCE_NAME: "postgres"
+  _INSTANCE_NAME: "djangosite"
   _IMAGE_NAME: gcr.io/${PROJECT_ID}/${_SERVICE_NAME}
