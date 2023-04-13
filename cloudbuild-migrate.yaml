@@ -32,4 +32,4 @@ steps:
 substitutions:
   _REGION: "europe-west1"
   _SERVICE_NAME: "djangosite"
-  _INSTANCE_NAME: "postgres"
+  _INSTANCE_NAME: "djangosite"
