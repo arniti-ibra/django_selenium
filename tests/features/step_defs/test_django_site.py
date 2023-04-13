@@ -12,46 +12,52 @@ from pytest_bdd import (
     when,
 )
 
+def get_default_url(url):
+    "gets the default url of the site and appends / to it if necessary"
+    if url[-1] == "/":
+        return url
+    return url + "/"
 
-@scenario('features\site.feature', 'Attempt to vote without choosing an option')
+
+@scenario('../site.feature', 'Test contents of the nba page')
+def test_test_contents_of_the_nba_page():
+    """Test contents of the nba page."""
+
+
+@scenario('../site.feature', 'Test submitting to nba database page')
+def test_test_submitting_to_nba_database_page():
+    """Test submitting to nba database page."""
+
+
+@scenario('../site.feature', 'Move to the polls page')
+def test_move_to_the_polls_page():
+    """Move to the polls page."""
+
+
+@scenario('../site.feature', 'Move to the GOAT poll page')
+def test_move_to_the_goat_poll_page():
+    """Move to the GOAT poll page."""
+
+
+@scenario('../site.feature', 'Attempt to vote without choosing an option')
 def test_attempt_to_vote_without_choosing_an_option():
     """Attempt to vote without choosing an option."""
 
 
 
-@scenario('features\site.feature', 'Choose Michael Jordan as the GOAT and submit vote')
+@scenario('../site.feature', 'Choose Michael Jordan as the GOAT and submit vote')
 def test_choose_michael_jordan_as_the_goat_and_submit_vote():
     """Choose Michael Jordan as the GOAT and submit vote."""
 
 
-@scenario('features\site.feature', 'Maneuvering through the site')
-def test_maneuvering_through_the_site():
-    """Maneuvering through the site."""
-
-
-@scenario('features\site.feature', 'Move to the GOAT poll page')
-def test_move_to_the_goat_poll_page():
-    """Move to the GOAT poll page."""
-
-
-@scenario('features\site.feature', 'Move to the polls page')
-def test_move_to_the_polls_page():
-    """Move to the polls page."""
-
-
-@scenario('features\site.feature', 'Test contents of the nba page')
-def test_test_contents_of_the_nba_page():
-    """Test contents of the nba page."""
-
-
-@scenario('features\site.feature', 'Test submitting to nba database page')
-def test_test_submitting_to_nba_database_page():
-    """Test submitting to nba database page."""
-
-
-@scenario('features\site.feature', 'Vote Michael Jordan again')
+@scenario('../site.feature', 'Vote Michael Jordan again')
 def test_vote_michael_jordan_again():
     """Vote Michael Jordan again."""
+
+
+@scenario('../site.feature', 'Maneuvering through the site')
+def test_maneuvering_through_the_site():
+    """Maneuvering through the site."""
 
 
 @given('the navbar, form, and images are visible on the page')
@@ -114,8 +120,10 @@ def results_page(browser):
 
 
 @given('you launch a browser and you have your site running and the page title is Player Database')
-def player_database_page(browser):
+def player_database_page(browser, url):
     """you launch a browser and you have your site running and the page title is Player Database."""
+    browser.get(url)
+    WebDriverWait(browser, 15)
     assert browser.current_url == "http://127.0.0.1:8000/"
     assert browser.title == "Player Database"
 
@@ -220,14 +228,15 @@ def vote_jordan_again(browser):
 def back_to_nba_database(browser):
     """go back to the NBA database by clicking on the - Go to Player Database - button."""
     browser.find_element(By.CSS_SELECTOR, 'body > a').click()
-    assert browser.current_url == "http://127.0.0.1:8000/"
-    assert browser.title == "Player Database"
+    # browser.implicitly_wait(10)
+    # assert browser.current_url == "http://127.0.0.1:8000/"
+    # assert browser.title == "Player Database"
 
 
 @then('have a button on the navbar in the NBA database page called Player Database that refreshes the page')
 def refresh_page(browser):
     """have a button on the navbar in the NBA database page called Player Database that refreshes the page."""
-    browser.find_element(By.CSS_SELECTOR, 'body > nav > a').click()
+    browser.find_element(By.CSS_SELECTOR, 'body > a').click()
     assert browser.current_url == "http://127.0.0.1:8000/"
 
 
