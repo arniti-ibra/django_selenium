@@ -44,10 +44,10 @@ elif os.environ.get("GOOGLE_CLOUD_PROJECT", None):
 else:
     raise Exception("No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.")
 
-SECRET_KEY = 'django-insecure-6)*x@oynwa7wh0fp%v77h9!ptv^p&m3_bu1*w$m-&nx66ba^%^'
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = ["*"]
 
