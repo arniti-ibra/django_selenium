@@ -1,0 +1,55 @@
+[
+    {
+        "model": "polls.Question",
+        "pk": 1,
+        "fields": {
+            "question_text": "Who's the GOAT in basketball?",
+            "pub_date": "2012-09-04 06:00Z"
+        }
+    },
+    {
+        "model": "polls.Choice",
+        "pk": 1,
+        "fields": {
+            "referring_question": 1,
+            "choice_text": "Michael Jordan",
+            "votes": 0
+        }
+    },
+    {
+        "model": "polls.Choice",
+        "pk": 2,
+        "fields": {
+            "referring_question": 1,
+            "choice_text": "Lebron James",
+            "votes": 0
+        }
+    },
+    {
+        "model": "polls.Choice",
+        "pk": 3,
+        "fields": {
+            "referring_question": 1,
+            "choice_text": "Kobe Bryant",
+            "votes": 0
+        }
+    },
+    {
+        "model": "polls.Choice",
+        "pk": 4,
+        "fields": {
+            "referring_question": 1,
+            "choice_text": "Steph Curry",
+            "votes": 0
+        }
+    },
+    {
+        "model": "polls.Choice",
+        "pk": 5,
+        "fields": {
+            "referring_question": 1,
+            "choice_text": "Magic Johnsen",
+            "votes": 0
+        }
+    }
+]
