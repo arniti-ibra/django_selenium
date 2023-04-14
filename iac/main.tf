@@ -21,6 +21,7 @@ data "google_project" "project" {
 
 variable "project" {
   type        = string
+  default     = "django-cloud-deploy"
   description = "Google Cloud Project ID"
 }
 
