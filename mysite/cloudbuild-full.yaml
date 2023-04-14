@@ -61,4 +61,5 @@ substitutions:
   _SERVICE_NAME: "djangosite"
   _REGION: "europe-west1"
   _INSTANCE_NAME: "djangosite"
-  _IMAGE_NAME: gcr.io/${PROJECT_ID}/${_SERVICE_NAME}
+  _IMAGE_NAME: "gcr.io/${PROJECT_ID}/${_SERVICE_NAME}"
+  _URL: "https://djangosite-uhgxj7hora-ew.a.run.app"
