@@ -8,24 +8,24 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-      steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up python:3.10
-        with:
-          python-version: "3.10"
-      - name: install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r test_requirements.txt
-      - name: run pytest
-        run: |
-          pytest -v --url https://djangosite-uhgxj7hora-ew.a.run.app --junitxml=junit/test-results.xml
-        working-directory: ${{ github.workspace }}/tests/features/step_defs/prod
-      - name: Publish test results
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test Results
-          path: junit/
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up python:3.10
+      with:
+        python-version: "3.10"
+    - name: install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r test_requirements.txt
+    - name: run pytest
+      run: |
+        pytest -v --url https://djangosite-uhgxj7hora-ew.a.run.app --junitxml=junit/test-results.xml
+      working-directory: ${{ github.workspace }}/tests/features/step_defs/prod
+    - name: Publish test results
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Test Results
+        path: junit/
 
