@@ -12,6 +12,7 @@ pytest:
   before_script:
     - cd $CI_PROJECT_DIR/tests/features/step_defs/prod
   stage: prod
+  script:
     - pytest -v --url https://djangosite-uhgxj7hora-ew.a.run.app --cov-report term --cov=.
 coverage:
   stage: prod
