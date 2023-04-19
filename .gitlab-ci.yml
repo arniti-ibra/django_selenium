@@ -1,20 +1,20 @@
 image: python:3.10
 
 stages:
-  - test
-change_dir:
-  stage: test
-  script:
-    - cd tests/features/step_defs/prod
-pytest:
-  stage: test
+  - prod
+pip_installs:
+  stage: prod
   before_script:
-    - pip install test_requirements.txt
+    - cd $CI_PROJECT_DIR
   script:
+    - pip install test_requirements.txt 
+pytest:
+  before_script:
+    - cd $CI_PROJECT_DIR/tests/features/step_defs/prod
+  stage: prod
     - pytest -v --url https://djangosite-uhgxj7hora-ew.a.run.app --cov-report term --cov=.
-
 coverage:
-  stage: test
+  stage: prod
   script:
     - coverage xml
   artifacts:
